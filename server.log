@@ -1,0 +1,47 @@
+<frozen runpy>:128: RuntimeWarning: 'flash_server.main' found in sys.modules after import of package 'flash_server', but prior to execution of 'flash_server.main'; this may result in unpredictable behaviour
+INFO:     Started server process [2718144]
+INFO:     Waiting for application startup.
+<frozen runpy>:128: RuntimeWarning: 'flash_server.main' found in sys.modules after import of package 'flash_server', but prior to execution of 'flash_server.main'; this may result in unpredictable behaviour
+/home/vasyl/apps/chatterbox/flash/.venv/lib/python3.12/site-packages/diffusers/models/lora.py:393: FutureWarning: `LoRACompatibleLinear` is deprecated and will be removed in version 1.0.0. Use of `LoRACompatibleLinear` is deprecated. Please switch to PEFT backend by installing PEFT: `pip install peft`.
+  deprecate("LoRACompatibleLinear", "1.0.0", deprecation_message)
+<frozen runpy>:128: RuntimeWarning: 'flash_server.main' found in sys.modules after import of package 'flash_server', but prior to execution of 'flash_server.main'; this may result in unpredictable behaviour
+/home/vasyl/apps/chatterbox/flash/.venv/lib/python3.12/site-packages/diffusers/models/lora.py:393: FutureWarning: `LoRACompatibleLinear` is deprecated and will be removed in version 1.0.0. Use of `LoRACompatibleLinear` is deprecated. Please switch to PEFT backend by installing PEFT: `pip install peft`.
+  deprecate("LoRACompatibleLinear", "1.0.0", deprecation_message)
+<frozen runpy>:128: RuntimeWarning: 'flash_server.main' found in sys.modules after import of package 'flash_server', but prior to execution of 'flash_server.main'; this may result in unpredictable behaviour
+/home/vasyl/apps/chatterbox/flash/.venv/lib/python3.12/site-packages/diffusers/models/lora.py:393: FutureWarning: `LoRACompatibleLinear` is deprecated and will be removed in version 1.0.0. Use of `LoRACompatibleLinear` is deprecated. Please switch to PEFT backend by installing PEFT: `pip install peft`.
+  deprecate("LoRACompatibleLinear", "1.0.0", deprecation_message)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:58524 - "GET /status HTTP/1.1" 200 OK
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+S3 Token -> Mel Inference...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 20.10it/s]
+INFO:     127.0.0.1:45286 - "POST /v1/syntheses HTTP/1.1" 201 Created
+/usr/lib/python3.12/contextlib.py:105: FutureWarning: `torch.backends.cuda.sdp_kernel()` is deprecated. In the future, this context manager will be removed. Please see `torch.nn.attention.sdpa_kernel()` for the new context manager, with updated signature.
+  self.gen = func(*args, **kwds)
+S3 Token -> Mel Inference...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 11.19it/s]100%|██████████| 2/2 [00:00<00:00, 11.18it/s]
+INFO:     127.0.0.1:54552 - "POST /v1/syntheses HTTP/1.1" 201 Created
+S3 Token -> Mel Inference...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 17.86it/s]100%|██████████| 2/2 [00:00<00:00, 17.84it/s]
+INFO:     127.0.0.1:54558 - "POST /v1/syntheses HTTP/1.1" 201 Created
+S3 Token -> Mel Inference...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 11.60it/s]100%|██████████| 2/2 [00:00<00:00, 11.59it/s]
+INFO:     127.0.0.1:40450 - "POST /v1/syntheses HTTP/1.1" 201 Created
+S3 Token -> Mel Inference...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 21.46it/s]
+INFO:     127.0.0.1:40456 - "POST /v1/syntheses HTTP/1.1" 201 Created
+S3 Token -> Mel Inference...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 22.30it/s]
+INFO:     192.168.1.69:61508 - "POST /v1/syntheses HTTP/1.1" 201 Created
+S3 Token -> Mel Inference...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 11.80it/s]100%|██████████| 2/2 [00:00<00:00, 11.79it/s]
+INFO:     192.168.1.69:61538 - "POST /v1/syntheses HTTP/1.1" 201 Created
+S3 Token -> Mel Inference...
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 22.82it/s]
+INFO:     192.168.1.69:61544 - "POST /v1/syntheses HTTP/1.1" 201 Created
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2718144]
