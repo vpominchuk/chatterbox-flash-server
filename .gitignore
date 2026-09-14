@@ -9,3 +9,4 @@ output/
 .env
 .env.local
 server.log
+server-plan.md
