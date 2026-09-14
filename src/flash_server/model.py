@@ -72,6 +72,8 @@ class TTSModel(Protocol):
     @property
     def sample_rate(self) -> int: ...
 
+    def warmup(self) -> None: ...
+
     def synthesize(
         self, text: str, reference_path: str, settings: GenerationSettings
     ) -> np.ndarray: ...
@@ -140,6 +142,9 @@ class FakeTTSModel:
         )
         return wave.astype(np.float32)
 
+    def warmup(self) -> None:
+        pass
+
     def release(self) -> None:
         self.released = True
 
@@ -203,6 +208,26 @@ class ChatterboxModel:
         if hasattr(waveform, "detach"):
             waveform = waveform.detach().cpu().numpy()
         return np.asarray(waveform, dtype=np.float32).reshape(-1)
+
+    def warmup(self) -> None:
+        """Run one tiny synthesis so first-inference CUDA costs are paid now."""
+        import os
+        import tempfile
+
+        from .audio import write_wav
+
+        n = int(self._sample_rate * 0.25)
+        t = np.arange(n, dtype=np.float32) / self._sample_rate
+        tone = (0.2 * np.sin(2 * np.pi * 220.0 * t)).astype(np.float32)
+        fd, path = tempfile.mkstemp(prefix="flash_warm_", suffix=".wav")
+        os.close(fd)
+        try:
+            write_wav(path, tone, self._sample_rate)
+            self.synthesize(
+                "warm", path, GenerationSettings(num_steps=2, n_cfm_timesteps=2)
+            )
+        finally:
+            os.unlink(path)
 
     def release(self) -> None:
         import gc

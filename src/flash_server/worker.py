@@ -29,6 +29,7 @@ def worker_main(loader, conn) -> None:
             if kind == "load":
                 try:
                     model = loader()
+                    model.warmup()
                     conn.send(("loaded", model.sample_rate))
                 except Exception as exc:
                     conn.send(("error", exc))
